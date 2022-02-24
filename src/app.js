@@ -1,13 +1,15 @@
+import './database/index.js'
 import express from 'express'
-import contatosRoutes from "./routes/contatosRoutes.js";
-import database from './database.js'
+import contatoRoutes from "./routes/contatoRoutes.js";
+import userRoutes from "./routes/userRoutes.js";
+
 
 class App {
     constructor() {
 
         this.app = express();
+        this.middlewares(); // IMPORTANT: OS MIDDLEWARES PRECISAM VIR ANTES DAS ROTAS
         this.routes();
-        this.middlewares();
 
         console.log('constructor');
     }
@@ -20,7 +22,8 @@ class App {
     routes() {
         console.log('routes');
 
-        this.app.use('/', contatosRoutes);
+        this.app.use('/contatos', contatoRoutes);
+        this.app.use('/users', userRoutes);
 
     }
 

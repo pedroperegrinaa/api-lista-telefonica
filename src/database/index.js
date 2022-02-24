@@ -1,6 +1,9 @@
-import { Sequelize } from "sequelize/types";
-import dbConfig from "../config/database";
+import Sequelize from 'sequelize';
+import dbConfig from "../config/database.js";
+
+// import User from "../models/User.js"
+import Contato from "../models/ContatoModel.js"
 
 const connection = new Sequelize(dbConfig);
 
-export default connection;
+Contato.init(connection);
