@@ -1,10 +1,10 @@
 export default {
     dialect: 'mysql',
-    host: 'localhost',
+    host: 'sql10.freesqldatabase.com',
     port: 3306,
-    username: 'root',
-    password: '',
-    database: 'lista_telefonica',
+    username: 'sql10475154',
+    password: 'mUSa5fNBkn',
+    database: 'sql10475154',
     define: {
         timestamps: true,
         underscore: true,
