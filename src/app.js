@@ -1,5 +1,6 @@
 import './database/index.js'
 import express from 'express'
+import cros from 'cors';
 import contatoRoutes from "./routes/contatoRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
@@ -17,6 +18,7 @@ class App {
         console.log('mid');
         this.app.use(express.urlencoded({ extended: true }));
         this.app.use(express.json());
+        this.app.use(cors());
     }
 
     routes() {

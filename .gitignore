@@ -1,5 +1,4 @@
-node_modules
-
 .env
 .env2
-.env3
+
+node_modules
