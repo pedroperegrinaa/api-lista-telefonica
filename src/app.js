@@ -1,6 +1,6 @@
 import './database/index.js'
 import express from 'express'
-import cros from 'cors';
+import cors from 'cors';
 import contatoRoutes from "./routes/contatoRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 
