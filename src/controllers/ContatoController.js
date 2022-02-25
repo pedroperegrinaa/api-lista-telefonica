@@ -4,7 +4,7 @@ class ContatoController {
 
     async index(req, res) {
         const contatos = await Contato.findAll();
-        res.json({ contatos });
+        res.json(contatos);
     }
 
     async store(req, res) {
@@ -12,13 +12,13 @@ class ContatoController {
         console.log(name, email);
         const contato = await Contato.create({ name, email });
 
-        return res.json({ contato });
+        return res.json(contato);
     }
     async show(req, res) {
         console.log(req.param);
         const contato = await Contato.findByPk(req.params.id);
 
-        res.json({ contato });
+        res.json(contato);
 
     }
     async delete(req, res) {
