@@ -2,6 +2,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export default {
+    url: process.env.DATABASE_URL,
     dialect: process.env.DATABASE_DIALECT,
     host: process.env.DATABASE_HOST,
     port: process.env.DATABASE_PORT,
@@ -12,6 +13,5 @@ export default {
     define: {
         timestamps: true,
         underscore: true,
-    },
-
+    }
 };
