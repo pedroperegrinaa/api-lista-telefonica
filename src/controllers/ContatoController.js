@@ -8,9 +8,9 @@ class ContatoController {
     }
 
     async store(req, res) {
-        const { name, email } = await req.body;
-        console.log(name, email);
-        const contato = await Contato.create({ name, email });
+        const { name, email, phone } = await req.body;
+        console.log(name, email, phone);
+        const contato = await Contato.create({ name, email, phone });
 
         return res.json(contato);
     }
@@ -23,9 +23,13 @@ class ContatoController {
     }
     async delete(req, res) {
         const contato = await Contato.findByPk(req.params.id);
-        contato.destroy();
+        if (contato == null || contato == undefined) {
+            return res.json({ destroy: 'Contato invalido' });
+        } else {
+            contato.destroy();
+            res.json({ destroy: true });
+        }
 
-        res.json({ destroy: true });
     }
 }
 
