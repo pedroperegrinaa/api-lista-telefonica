@@ -8,6 +8,7 @@ class ContatoController {
     }
 
     async store(req, res) {
+        console.log(req.body);
         const { name, email, phone } = await req.body;
         console.log(name, email, phone);
         const contato = await Contato.create({ name, email, phone });
@@ -29,7 +30,17 @@ class ContatoController {
             contato.destroy();
             res.json({ destroy: true });
         }
+    }
+    async update(req, res) {
+        console.log(req.body);
+        const { name, email, phone } = await req.body;
+        console.log(name, email, phone);
 
+        const contato = await Contato.findByPk(req.params.id);
+
+        const contatoAtualizado = await contato.update(name, email, phone);
+
+        res.status(200).json(contatoAtualizado);
     }
 }
 
