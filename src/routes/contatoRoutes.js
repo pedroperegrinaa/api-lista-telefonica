@@ -7,5 +7,6 @@ router.get('/', ContatoController.index);
 router.get('/:id', ContatoController.show);
 router.post('/', ContatoController.store);
 router.delete('/:id', ContatoController.delete);
+router.put('/:id', ContatoController.update);
 
 export default router;

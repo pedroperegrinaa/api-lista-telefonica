@@ -38,7 +38,7 @@ class ContatoController {
 
         const contato = await Contato.findByPk(req.params.id);
 
-        const contatoAtualizado = await contato.update(name, email, phone);
+        const contatoAtualizado = await contato.update({ name, email, phone });
 
         res.status(200).json(contatoAtualizado);
     }
